@@ -16,24 +16,31 @@ def create_app():
     """
     # title - "Prosta aplikacja Tkinter"
 
+    root = tk.Tk()
+    root.title("Prosta aplikacja Tkinter")
+
+    frame = tk.Frame(root, padx=20, pady=20)
+    frame.pack(expand=True, fill=tk.BOTH)
+
     # label_instruct = umocuj przez pack
+    label_instruct = tk.Label(frame, text="Wpisz coś:")
+    label_instruct.pack()
 
-    # entry_text = 
+    entry_text = tk.Entry(frame)
+    entry_text.pack()
 
-    # label_result = tk.Label(...
+    label_result = tk.Label(frame, text="")
+    label_result.pack()
 
-    # zdefiniuj funkcję show_text() pobierającą wpisany tekst i wyświetlającą w label_result
-    # def show_text():
-    #     ...
-    #     label_result.config(...)
+    def show_text():
+        text = entry_text.get()
+        label_result.config(text=f"Wpisane: {text}")
 
-    # button_show = 
-    # button_show.pack()
+    button_show = tk.Button(frame, text="Pokaż", command=show_text)
+    button_show.pack()
 
-    # TODO: return root
-    pass
+    return root
 
 if __name__ == '__main__':
-    # TODO: app = create_app()
-    # TODO: app.mainloop()
-    pass
+    app = create_app()
+    app.mainloop()

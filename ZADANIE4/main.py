@@ -10,16 +10,15 @@ def create_and_filter_data():
     """
     # ustaw ziarno losowości np. np.random.seed(123)
 
-    # np.random.randint(...) - stwórz losową tablicę (rozmiar i zakres do wyboru)
-    # arr = ...
+    np.random.seed(123)
 
-    # df = 
+    arr = np.random.randint(0, 150, size=(20, 2))
 
+    df = pd.DataFrame(arr, columns=['A', 'B'])
 
-    # filtered_df = ...  
+    filtered_df = df[df['A'] > 50]
 
-    # return ...
-    pass
+    return filtered_df
 
 if __name__ == '__main__':
     # Przykładowe wywołanie

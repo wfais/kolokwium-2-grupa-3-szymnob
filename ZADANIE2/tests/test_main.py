@@ -1,4 +1,5 @@
 from ZADANIE2.main import Animal, LandAnimal, WaterAnimal, Amphibian
+import pytest
 
 def test_land_animal_sound():
     """Test sprawdza, czy LandAnimal zwraca poprawny dźwięk."""
